@@ -1,0 +1,5 @@
+library("arrow")
+library("dplyr")
+title_basics = read_parquet("title.basics.parquet")
+title_ratings = read_parquet("title.ratings.parquet")
+basics_ratings = merge(x = title_basics, y = title_ratings, by = "tconst")
